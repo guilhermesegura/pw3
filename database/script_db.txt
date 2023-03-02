@@ -1,3 +1,5 @@
+create database dbpw3;
+use dbpw3;
 CREATE TABLE tbLab (
 	idLab INT PRIMARY KEY AUTO_INCREMENT,
     Lab varchar(250)
