@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Laboratorio;
+
 class LaboratorioController extends Controller
 {
     /**
@@ -13,7 +15,12 @@ class LaboratorioController extends Controller
      */
     public function index()
     {
-        //
+        $laboratorio = Laboratorio::all();
+        foreach($laboratorio as $lab){
+            echo $lab->idLab;
+            echo $lab->Lab;
+            
+        }
     }
 
     /**

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Reclamacao;
+
 class ReclamacaoController extends Controller
 {
     /**
@@ -13,7 +15,11 @@ class ReclamacaoController extends Controller
      */
     public function index()
     {
-        //
+        $reclamacao = Reclamacao::all();
+        foreach ($reclamacao as $rec) {
+            echo $rec->idRec;
+            echo $rec->titulo;
+        }
     }
 
     /**

@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('Principal');
 });
 
-Route::get('/laboratorio', function () {
-    return view('Laboratorio');
-});
+Route::get('/laboratorio', "LaboratorioController@index");
 
 Route::get('/quemsomos', function () {
     return view('QuemSomos');
@@ -28,6 +26,4 @@ Route::get('/contato', function () {
 });
 
 
-Route::get('/reclamacao', function () {
-    return view('Reclamacao');
-});
+Route::get('/reclamacao', 'ReclamacaoController@index');
