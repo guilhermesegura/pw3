@@ -16,12 +16,8 @@ class ReclamacaoController extends Controller
     public function index()
     {
         $reclamacao = Reclamacao::all();
-        foreach ($reclamacao as $rec) {
-            echo $rec->idRec;
-            echo $rec->titulo;
-        }
+        
     }
-
     /**
      * Show the form for creating a new resource.
      *

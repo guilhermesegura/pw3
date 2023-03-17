@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('Principal');
 });
 
-Route::get('/laboratorio', "LaboratorioController@index");
+Route::get('/laboratorio', 'LaboratorioController@index');
 
 Route::get('/quemsomos', function () {
     return view('QuemSomos');

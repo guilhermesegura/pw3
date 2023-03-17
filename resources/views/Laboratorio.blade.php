@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Olá</h1>
+    
+
+    @foreach($laboratorio as $lab)
+        <p>{{$lab->idLab}} {{$lab->Lab}}</p>
+    @endforeach
+
+
 </body>
 </html>

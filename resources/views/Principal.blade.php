@@ -12,6 +12,7 @@
         <li><a href="/quemsomos">Quem Somos</a></li>
         <li><a href="/reclamacao">Reclamacao</a></li>
         <li><a href="/contato">Contatos</a></li>
+        <li><a href="/laboratorio">Laboratorios</a></li>
     </ul>
 </body>
 </html>
