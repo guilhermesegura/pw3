@@ -16,6 +16,7 @@ class ReclamacaoController extends Controller
     public function index()
     {
         $reclamacao = Reclamacao::all();
+        return view('/reclamacao', compact('reclamacao'));
         
     }
     /**
@@ -36,7 +37,17 @@ class ReclamacaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reclamacao = new Reclamacao();
+
+        $reclamacao -> idLab = $request -> idlab;
+        $reclamacao -> pc = $request -> txPc;
+        $reclamacao -> titulo = $request -> txTitulo;
+        $reclamacao -> descricao = $request -> txDescricao;
+        $reclamacao -> dtCriacao = $request -> txDtcriacao;
+
+        $reclamacao -> save();
+        return redirect('/reclamacao');
+        
     }
 
     /**
@@ -79,8 +90,10 @@ class ReclamacaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idRec)
     {
-        //
+        $reclamacao = new Reclamacao();
+        $reclamacao->where('idRec', '=', $idRec)->delete();
+        return redirect('/reclamacao');
     }
 }
