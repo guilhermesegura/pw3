@@ -1,3 +1,24 @@
+Web.php
+
+Route::get('/contato','ContatoController@index');
+Route::post('/contato','ContatoController@store');
+Route::get('/contato/excluir/{idContato}','ContatoController@destroy');
+
+----------------------------------------------------------------------------------
+
+Controller
+
+public function destroy($idContato)
+    {
+        $contato = new Contato();
+        $contato->where('idContato','=',$idContato)->delete();
+        return redirect('/contato');
+    }
+
+----------------------------------------------------------------------------------
+
+View
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +45,9 @@
         {{$c->email}}
         {{$c->assunto}}
         {{$c->mensagem}}
-        <a href="/contato/excluir/{{$c->idContato}}"> Excluir </a>
+        <a href="/contato/excluir/{{$c->idContato}}"> 
+            Excluir
+        </a>
         </p>
     @endforeach
     

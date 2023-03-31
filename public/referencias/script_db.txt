@@ -14,11 +14,3 @@ CREATE TABLE tbReclamacao (
     dtCriacao varchar(250),
     FOREIGN KEY (idLab) REFERENCES tblab(idLab)
 );
-
-CREATE TABLE tbContato(
-    idContato int PRIMARY KEY AUTO_INCREMENT,
-    nome varchar(250),
-    email varchar(250),
-    assunto varchar(250),
-    mensagem varchar(250)
-);

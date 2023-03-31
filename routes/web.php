@@ -27,3 +27,8 @@ Route::get('/contato', function () {
 
 
 Route::get('/reclamacao', 'ReclamacaoController@index');
+
+
+Route::get('/contato','ContatoController@index');
+Route::post('/contato','ContatoController@store');
+Route::get('/contato/excluir/{idContato}','ContatoController@destroy');
