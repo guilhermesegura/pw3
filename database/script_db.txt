@@ -11,9 +11,10 @@ CREATE TABLE tbReclamacao (
     pc varchar(250),
     titulo varchar(250),
     descricao varchar(250),
-    dtCriacao varchar(250),
+    dtCriacao date,
     FOREIGN KEY (idLab) REFERENCES tblab(idLab)
 );
+
 
 CREATE TABLE tbContato(
     idContato int PRIMARY KEY AUTO_INCREMENT,

@@ -15,10 +15,16 @@ class ReclamacaoController extends Controller
      */
     public function index()
     {
-        $reclamacao = Reclamacao::all();
-        return view('/reclamacao', compact('reclamacao'));
+        $reclamacao = Reclamacao::orderBy('dtCriacao', 'ASC')->get();
+        return view('Reclamacao', compact('reclamacao'));
         
     }
+    
+    public static function totaldeRec(){
+        $reclamacao = Reclamacao::all()->count();
+        return $reclamacao;
+    }   
+    
     /**
      * Show the form for creating a new resource.
      *
