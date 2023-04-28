@@ -8,10 +8,14 @@
     <title>Reclamacao</title>
 </head>
 <body>
-<div id='pai'>
-<form action="/reclamacao" method="post">        
-        {{csrf_field()}}        
-        <input type="number" name="idlab" placeholder="id Laboratório"/>
+    <div id='pai'>
+    <form action="/reclamacao" method="post">        
+{{csrf_field()}}        
+        <select name="selReclamacao">
+            @foreach( App\Http\Controllers\LaboratorioController::allLab() as $r)
+            <option value="{{$r->idLab}}"> {{$r->Lab}}  </option>    
+            @endforeach
+        </select>
         <input type="text" name="txPc" placeholder="Computador" />
         <input type="text" name="txTitulo" placeholder="Título" />
         <input type="text" name="txDescricao" placeholder="Descrição" />

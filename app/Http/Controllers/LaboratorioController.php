@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Laboratorio;
 
 class LaboratorioController extends Controller
@@ -15,9 +14,13 @@ class LaboratorioController extends Controller
      */
     public function index()
     {
-        $laboratorio = Laboratorio::all();
-       
-        return view('Laboratorio', compact('laboratorio'));
+        $laboratorios = Laboratorio::all();
+        return view('laboratorio',compact('laboratorios'));
+    }
+    
+    public static function allLab(){
+        $contatos = Laboratorio::all();      
+        return $contatos;
     }
 
     /**
@@ -38,7 +41,13 @@ class LaboratorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $laboratorio = new Laboratorio();
+        $laboratorio -> idLab = $request ->txIdLab;
+        $laboratorio -> Lab = $request -> txLab;
+
+        $laboratorio -> save();
+
+        return redirect('/laboratorio');
     }
 
     /**
@@ -81,8 +90,10 @@ class LaboratorioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idLab)
     {
-        //
+        $laboratorio = new Laboratorio();
+        $laboratorio->where('idLab','=',$idLab)->delete();
+        return redirect('/laboratorio');
     }
 }

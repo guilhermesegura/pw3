@@ -25,6 +25,12 @@ class ReclamacaoController extends Controller
         return $reclamacao;
     }   
     
+    
+    public function allRec(){
+        $contatos = Reclamacao::all();      
+        return $contatos;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +51,7 @@ class ReclamacaoController extends Controller
     {
         $reclamacao = new Reclamacao();
 
-        $reclamacao -> idLab = $request -> idlab;
+        $reclamacao -> idLab = $request -> selReclamacao;
         $reclamacao -> pc = $request -> txPc;
         $reclamacao -> titulo = $request -> txTitulo;
         $reclamacao -> descricao = $request -> txDescricao;

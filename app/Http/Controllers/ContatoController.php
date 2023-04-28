@@ -29,6 +29,12 @@ class ContatoController extends Controller
     {
         //
     }
+    
+    public function allCont(){
+        $contatos = Contato::all();      
+        return $contatos;
+    }
+
 
     /**
      * Store a newly created resource in storage.
