@@ -8,6 +8,13 @@
      <title>Document</title>
  </head>
  <body>
+ <ul>
+        <li><a href="/">Principal</a></li>
+        <li><a href="/quemsomos">Quem Somos</a></li>
+        <li><a href="/reclamacao">Reclamacao</a></li>
+        <li><a href="/contato">Contatos</a></li>
+        <li><a href="/laboratorio">Laboratorios</a></li>
+    </ul>
 
     <form action="/laboratorio" method="post">        
             {{csrf_field()}}        
@@ -26,6 +33,11 @@
             </p>
         @endforeach
 
+        <footer>
+        <div>
+            <p>Todos os direitos reservados</p>
+        </div>
+      </footer>
         
  </body>
  </html>

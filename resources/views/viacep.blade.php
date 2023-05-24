@@ -78,6 +78,15 @@
     </head>
 
     <body>
+    <nav>
+        <ul>
+            <li><a href="/">Principal</a></li>
+            <li><a href="/quemsomos">Quem Somos</a></li>
+            <li><a href="/reclamacao">Reclamação</a></li>
+            <li><a href="/contato">Contatos</a></li>
+            <li><a href="/laboratorio">Laboratórios</a></li>
+        </ul>
+    </nav>
     <!-- Inicio do formulario -->
       <form method="get" action=".">
         <label>Cep:
@@ -94,6 +103,12 @@
         <label>IBGE:
         <input name="ibge" type="text" id="ibge" size="8" /></label><br />
       </form>
+
+      <footer>
+        <div>
+            <p>Todos os direitos reservados</p>
+        </div>
+      </footer>
     </body>
 
     </html>
